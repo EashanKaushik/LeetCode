@@ -1,27 +1,27 @@
 class Solution:
     def combinationSum(self, candidates, target):
 
-        combo = list()
+        result = list()
+        combo_list = list()
 
-        for i, num in enumerate(candidates):
+        self.back_track(0, candidates, target, combo_list, result)
 
-            start = num
-            all_sum = set()
+        return result
 
-            if target % num == 0:
-                combo.append([num] * (target // num))
+    def back_track(self, start, nums, target, combo_list, result):
 
-            while start < target:
-                all_sum.add(target - start)
-                start += num
+        if target < 0:
+            return
 
-            for index in range(i + 1, len(candidates)):
-                if candidates[index] in all_sum:
-                    complement = target - candidates[index]
-                    combo.append([candidates[index]] + [num] * (complement // num))
+        if target == 0:
+            result.append(combo_list.copy())
+            return
 
-        return combo
+        for index in range(start, len(nums)):
+            print('Inside', index, nums, target - nums[index], combo_list + [nums[index]], result)
+            self.back_track(index, nums, target - nums[index], combo_list + [nums[index]], result)
+            print('Outside', combo_list, result)
 
 s = Solution()
 
-print(s.combinationSum([2,3,5], 8))
+print(s.combinationSum([2, 3, 5], 8))

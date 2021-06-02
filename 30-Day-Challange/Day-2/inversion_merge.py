@@ -15,26 +15,20 @@ class Solution:
             left = arr[:mid_index]
             right = arr[mid_index:]
 
-            print(left)
-
             count += self.merge_sort(left)
 
-            print (count)
-
-            print(right)
             count += self.merge_sort(right)
-            print(count)
             left_index = right_index = parent_index = 0
 
 
             while left_index < len(left) and right_index < len(right):
-                if left[left_index] < right[right_index]:
+                if left[left_index] <= right[right_index]:
                     arr[parent_index] = left[left_index]
                     left_index += 1
                 else:
                     arr[parent_index] = right[right_index]
                     right_index += 1
-                    count += 1
+                    count += mid_index - left_index
                 parent_index += 1
 
             while left_index < len(left):
@@ -47,10 +41,8 @@ class Solution:
                 right_index += 1
                 parent_index += 1
 
-            print('After', count)
-
         return count
 
 s = Solution()
 
-print(s.count_inverse([8, 4, 2, 1]))
+print(s.count_inverse([3, 1, 2]))

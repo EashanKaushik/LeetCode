@@ -3,35 +3,17 @@ import sys
 class Solution:
     def findLength(self, nums1, nums2):
 
-        i = 0
-        maximum = -sys.maxsize - 1
+        dp = [[0 for _ in range(len(nums2) + 1)] for _ in range(len(nums1) + 1)]
+        maximum = -1
 
-        while i < len(nums1):
+        for i in range(0, len(nums1)):
+            for j in range(0, len(nums2)):
+                if nums1[i] == nums2[j]:
+                    dp[i][j] = dp[i-1][j-1] + 1
+                    maximum = max(dp[i][j], maximum)
 
-            index = self.linear_search(nums2, nums1[i])
+        return maximum if maximum != -1 else 0
 
-            print("Values: ", nums1[i], index)
-
-            if index:
-                index -= 1
-                j = i
-                while j + 1 < len(nums1) and index + 1 < len(nums2) and nums1[j + 1] == nums2[index + 1]:
-                    print(j, i)
-                    maximum = max(maximum, j - i + 2)
-
-                    index += 1
-                    j += 1
-
-            i += 1
-
-        return maximum
-
-    def linear_search(self, nums, target):
-
-        if target in nums:
-            return nums.index(target) + 1
-        else:
-            return None
 
 s = Solution()
 

@@ -1,6 +1,3 @@
-from collections import deque
-
-
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -9,8 +6,7 @@ class TreeNode:
 
 
 class Solution:
-    def levelOrder(self, root):
-
+    def levelOrderBottom(self, root):
         if not root:
             return []
 
@@ -25,6 +21,8 @@ class Solution:
                 q1, q2 = self.add_level(q1, q2, output)
             else:
                 q2, q1 = self.add_level(q2, q1, output)
+
+        output.reverse()
 
         return output
 
@@ -59,4 +57,4 @@ root.right = TreeNode(2)
 root.left.right = TreeNode(4)
 root.right.right = TreeNode(4)
 
-print(s.levelOrder(root))
+print(s.levelOrderBottom(root))

@@ -35,4 +35,4 @@ root.right = TreeNode(2)
 root.left.right = TreeNode(4)
 root.right.right = TreeNode(4)
 
-print(s.hasPathSum(root))
+print(s.hasPathSum(root, 7))

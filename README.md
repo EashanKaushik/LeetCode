@@ -1,6 +1,6 @@
 
 
-1) # Backtracking
+# 1) Backtracking
 - #78 Subsets
 - #17 Phone Combinations
 - #79 Word Search

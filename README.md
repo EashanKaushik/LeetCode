@@ -37,6 +37,10 @@
 # 5. Tier
 - #208 Implement Trie
 - #211 Design Add and Search Words Data Structure
+- #222 Count Complete Tree Nodes
+
+# 6. BST
+- #226 Invert Binary Tree
 
 # Extra
 - #36 Valid Sudoku

@@ -34,8 +34,9 @@
 - #22 Generate Parenthesis
 - #40 Combo Sum 2
 
-
-
+# 5. Tier
+- #208 Implement Trie
+- #211 Design Add and Search Words Data Structure
 
 # Extra
 - #36 Valid Sudoku

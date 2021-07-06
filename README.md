@@ -49,3 +49,7 @@
 - #54 Spiral Matrix
 - #59 Spiral Matrix-2
 - #55 Jump Game
+- #1338 Reduce Array Size to The Half
+
+# Dynamic
+- #45 Jump Game -2

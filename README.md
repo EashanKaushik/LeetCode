@@ -45,4 +45,7 @@
 # Extra
 - #36 Valid Sudoku
 
-# June Weekly
+# Array
+- #54 Spiral Matrix
+- #59 Spiral Matrix-2
+- #55 Jump Game
